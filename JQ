@@ -1,0 +1,149 @@
+$(function() {
+
+    var header = $("#header"),
+	    introH = $("#intro").innerHeight(),
+	    scrollOffset = $(window).scrollTop();
+
+
+	/* fixedHeader*/
+	checkScroll(scrollOffset)
+
+    $(window).on("scroll", function() {
+
+        scrollOffset = $(this).scrollTop();
+
+        checkScroll(scrollOffset);
+
+    });
+
+
+    	function checkScroll(scrollOffset){
+
+        if (scrollOffset >= introH) {
+        	header.addClass("fixed");
+        } else {
+        	header.removeClass("fixed");
+        }
+    }
+
+
+
+    /*smoothScroll*/
+    $("[data-scroll]").on("click", function(event) {
+    	event.preventDefault();
+    	
+    	var $this = $(this)
+    	    blockId = $this.data('scroll'),
+    	    blockOffset = $(blockId).offset().top;
+
+    	$("html, body").animate({
+    		scrollTop: blockOffset
+    	}, 800)
+    })
+
+
+
+/* Collapse */
+$("[data-collapse]").on("click", function(event) {
+    event.preventDefault();
+
+    var $this = $(this),
+        blockId = $this.data('collapse');
+
+    $this.toggleClass("active");
+});
+
+
+
+$('a1').click(
+function(){
+  switch($('#image').attr('src')){
+      case 'assets/images/middleearth.png':
+      $('#image').attr('src', 'assets/images/angmar.png');
+      break;
+      case 'assets/images/angmar.png':
+      $('#image').attr('src', 'assets/images/middleearth.png');
+      break;
+    default:
+    //no default action
+      break;
+  }       
+}
+);
+
+$('a4').click(
+function(){
+  switch($('#image').attr('src')){
+      case 'assets/images/middleearth.png':
+      $('#image').attr('src', 'assets/images/rohan.png');
+      break;
+      case 'assets/images/rohan.png':
+      $('#image').attr('src', 'assets/images/middleearth.png');
+      break;
+    default:
+    //no default action
+      break;
+  }       
+}
+);
+
+$('a5').click(
+function(){
+  switch($('#image').attr('src')){
+      case 'assets/images/middleearth.png':
+      $('#image').attr('src', 'assets/images/gondor.png');
+      break;
+      case 'assets/images/gondor.png':
+      $('#image').attr('src', 'assets/images/middleearth.png');
+      break;
+    default:
+    //no default action
+      break;
+  }       
+}
+);
+
+$('a6').click(
+function(){
+  switch($('#image').attr('src')){
+      case 'assets/images/middleearth.png':
+      $('#image').attr('src', 'assets/images/mordor.png');
+      break;
+      case 'assets/images/mordor.png':
+      $('#image').attr('src', 'assets/images/middleearth.png');
+      break;
+    default:
+    //no default action
+      break;
+  }       
+}
+);
+
+$('a8').click(
+function(){
+  switch($('#image').attr('src')){
+      case 'assets/images/middleearth.png':
+      $('#image').attr('src', 'assets/images/eriador.png');
+      break;
+      case 'assets/images/eriador.png':
+      $('#image').attr('src', 'assets/images/middleearth.png');
+      break;
+    default:
+    //no default action
+      break;
+  }       
+}
+);
+
+
+});
+
+
+
+
+
+
+
+
+
+
